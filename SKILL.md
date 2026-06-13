@@ -67,8 +67,15 @@ These are format-agnostic — they hold for SVG and for generated rasters alike.
    multiple objects. If you can't name the silhouette in two words, simplify.
 2. **Fill over line.** Solid filled forms and *thick* strokes. Thin hairlines are
    the #1 cause of weak icons — they disintegrate when downscaled.
-3. **High figure/ground contrast.** Bright mark on a deep field, or a bold mark
-   on a vivid tile. Never pale-on-pale. Squint: the shape must still pop.
+3. **High figure/ground contrast — measured, not vibed.** It's *luminance* that
+   matters, not hue: a mid-tone mark (mid green, mid blue) on a near-black tile
+   differs in colour but barely in brightness, so it goes muddy at toolbar /
+   favicon sizes. On a dark tile the mark must be near-white or a bright/light
+   tint; on a light tile, a deep saturated mark. An icon must *pop*, so aim
+   higher than the WCAG text minimum: **contrast ratio ≥7, ideally ≥10**. Verify
+   before committing — you know the exact hexes, so check them:
+   `python3 scripts/contrast_check.py <mark-hex> <tile-hex>`. (~5:1 passes for
+   text but still reads weak as an icon — don't settle for it.)
 4. **Full-bleed container.** A **rounded-square ("squircle") tile** whose
    background fills the **entire frame edge-to-edge** — the icon *is* the frame.
    Never a squircle floating on white; that leaves stray white corners that look
@@ -203,11 +210,17 @@ served from web root.
 
 ## Step 7 — Verify it holds up small
 
-Boldness is a small-size property, so check it there. The contact sheet's
-16/32px strip already shows it for the concepts; for the final sliced set, glance
-at `favicons/favicon-32.png` and confirm the silhouette still reads. If it goes
-muddy or thin, the motif was too detailed — simplify, thicken, push contrast, and
-redo. This is the single most useful quality check.
+Boldness is a small-size property, so check it there. Two checks:
+
+- **Contrast** (do this *before* finalizing, while you still know the hexes):
+  `python3 scripts/contrast_check.py <mark-hex> <tile-hex>` — want ≥7, ideally
+  ≥10. A mid-tone mark on a dark tile is the classic trap; bump the mark toward
+  white/bright or lighten the tile.
+- **Silhouette:** glance at `favicons/favicon-32.png` (and the contact sheet's
+  16/32px strip) and confirm the shape still reads. If it goes muddy or thin, the
+  motif was too detailed — simplify, thicken, redo.
+
+This is the single most useful quality gate.
 
 ## Notes & gotchas
 

@@ -70,6 +70,10 @@ Both run standalone, no pip installs:
   ```bash
   python3 scripts/make_contact_sheet.py a.svg b.svg c.png --title "Concepts"
   ```
+- **`scripts/contrast_check.py`** — WCAG luminance contrast ratio between a mark and its tile, so the mark is verified to *pop* before you ship it. An icon needs a higher bar than text (aim ≥7, ideally ≥10) — a mid-tone mark on a dark tile passes for text yet reads muddy small.
+  ```bash
+  python3 scripts/contrast_check.py "#ffffff" "#0a9bb0"
+  ```
 
 ## Requirements
 
