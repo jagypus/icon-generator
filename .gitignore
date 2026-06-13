@@ -1,0 +1,12 @@
+# Local Claude config + session scratch
+.claude/
+.preview/
+
+# Runtime output the skill produces when used in-repo
+favicons/
+icon-concepts/
+
+# macOS / Python noise
+.DS_Store
+__pycache__/
+*.pyc

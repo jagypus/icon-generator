@@ -1,0 +1,18 @@
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="paper plane app icon">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1fd18a"/>
+      <stop offset="1" stop-color="#0a9bb0"/>
+    </linearGradient>
+    <clipPath id="tile"><rect width="512" height="512" rx="115"/></clipPath>
+  </defs>
+  <g clip-path="url(#tile)">
+    <rect width="512" height="512" fill="url(#g)"/>
+    <g transform="translate(256,260) rotate(-35) scale(13.5) translate(-12,-12)">
+      <path d="M2 3 L22 12 L6 12 Z" fill="#000" opacity="0.10" transform="translate(0.7,1.4)"/>
+      <path d="M2 21 L22 12 L6 12 Z" fill="#000" opacity="0.10" transform="translate(0.7,1.4)"/>
+      <path d="M2 3 L22 12 L6 12 Z" fill="#fff"/>
+      <path d="M2 21 L22 12 L6 12 Z" fill="#dfe8ef"/>
+    </g>
+  </g>
+</svg>
