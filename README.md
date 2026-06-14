@@ -83,4 +83,4 @@ Both run standalone, no pip installs:
 
 ## License
 
-MIT © 2026 David Hodgson
+MIT © 2026 Mycelial, LLC
